@@ -24,4 +24,16 @@ public class StringCalculatorTest {
         int sum = stringCalculator.add("5,2");
         assertEquals(7, sum);
     }
+
+    @Test
+    public void testArgumentsSeparatedByNewline(){
+        int sum = stringCalculator.add("5\n2");
+        assertEquals(7, sum);
+    }
+
+    @Test
+    public void testMultipleArguments(){
+        int sum = stringCalculator.add("4,10\n1,3");
+        assertEquals(18, sum);
+    }
 }
