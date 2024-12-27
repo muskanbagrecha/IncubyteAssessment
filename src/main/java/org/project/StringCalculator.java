@@ -1,6 +1,9 @@
 package org.project;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 
     public int add(String numbers){
@@ -24,13 +27,19 @@ public class StringCalculator {
 
         String[] numbersArr = numbers.split(delimiter);
 
+        List<Integer> negativeNumbers = new ArrayList<>();
         int sum = 0;
-
         for(String token : numbersArr){
             int number = Integer.parseInt(token);
+            if(number<0){
+                negativeNumbers.add(number);
+            }
             sum +=number;
         }
-
+        //arguments cannot have a negative number.
+        if(!negativeNumbers.isEmpty()){
+            throw new IllegalArgumentException("negative numbers not allowed " + negativeNumbers);
+        }
         return sum;
     }
 }
