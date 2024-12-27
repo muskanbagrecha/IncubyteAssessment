@@ -36,4 +36,10 @@ public class StringCalculatorTest {
         int sum = stringCalculator.add("4,10\n1,3");
         assertEquals(18, sum);
     }
+
+    @Test
+    public void testCustomerDelimiters(){
+        int sum = stringCalculator.add("//;\n1;2");
+        assertEquals(3, sum);
+    }
 }
