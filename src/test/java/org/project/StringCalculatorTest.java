@@ -13,4 +13,15 @@ public class StringCalculatorTest {
         assertEquals(0, sum);
     }
 
+    @Test
+    public void testOneArgument(){
+        int sum = stringCalculator.add("2");
+        assertEquals(2, sum);
+    }
+
+    @Test
+    public void testTwoArguments(){
+        int sum = stringCalculator.add("5,2");
+        assertEquals(7, sum);
+    }
 }
